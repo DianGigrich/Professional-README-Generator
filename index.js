@@ -3,9 +3,7 @@ const fs = require('fs')
 const inquirer = require('inquirer')
 
 
-
-
-// Create an array of questions for user input
+// An array of questions for user input
 inquirer
     .prompt([
         {
@@ -42,7 +40,7 @@ inquirer
             type: "list",
             message: "Which license would you like?",
             name: "License",
-            choices: ["Apache License 2.0", "GNU LGPL v3", "MIT License", "Mozilla Public license 2.0", "GNU GPL v2", "Eclipse Public License", "BSD-2-Clause", "BSD 3-Clause"]
+            choices: ["Creative Commons", "Apache License 2.0", "GNU LGPL v3", "MIT License", "Mozilla Public license 2.0", "GNU GPL v2", "Eclipse Public License", "BSD-2-Clause", "BSD 3-Clause"]
         },
         {
             type: "input",
@@ -65,45 +63,45 @@ inquirer
             name: "Email"
         }
     ]).then((response) =>
-        fs.writeFile("README.md",
+        fs.writeFile("README2.md",
 `${renderLicenseBadge(response.License)}
-#${response.Title}
+# ${response.Title}
 
-##Description:
+## Description
 ${response.Description}
       
 ## Table of Contents
-* [Installation](#Installation)
-* [Usage](#Usage)
-* [Screenshot](#Screenshot)
-* [Credits](#Credits)
-* [License](#License)
-* [Contributing](#Contributing)
-* [Tests](#Tests)
-* [Questions](#Questions)
+* [Installation](#installation)
+* [Usage](#usage)
+* [Screenshot](#screenshot)
+* [Credits](#credits)
+* [License](#license)
+* [Contributing](#contributing)
+* [Tests](#tests)
+* [Questions](#questions)
       
-##Installation:
+## Installation
 ${response.Installation}
       
-##Usage:
+## Usage
 ${response.Usage}
       
-##Screenshot:
+## Screenshot
 [Screenshot of project](${response.Screenshot})
       
-##Credits
+## Credits
 ${response.Credits}
 
-##License
+## License:
 This application is covered under the ${response.License} license.
       
-##Contributing
-${response.Contributing}
+## Contributing
+[Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](code_of_conduct.md)
       
-##Tests
+## Tests
 ${response.Tests}
       
-##Questions
+## Questions
 [Link to ${response.GitHub}'s GitHub](https://github.com/${response.GitHub})
 
 [Contact Us](mailto:${response.Email})`,
@@ -126,7 +124,9 @@ function renderLicenseBadge(license) {
         return "[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)"
     }else if (license === "BSD 2-Clause") {
         return "[![License](https://img.shields.io/badge/License-BSD%202--Clause-orange.svg)](https://opensource.org/licenses/BSD-2-Clause)"
-    }else if (license === "Eclipse Public License") {
+    }else if (license === "Creative Commons") {
+        return "[![License: CC BY 4.0](https://licensebuttons.net/l/by/4.0/80x15.png)](https://creativecommons.org/licenses/by/4.0/)"
+    } else if (license === "Eclipse Public License") {
         return "[![License](https://img.shields.io/badge/License-EPL%201.0-red.svg)](https://opensource.org/licenses/EPL-1.0)"
     }else if (license === "GNU LGPL v3") {
         return "[![License: LGPL v3](https://img.shields.io/badge/License-LGPL%20v3-blue.svg)](https://www.gnu.org/licenses/lgpl-3.0)"
