@@ -10,31 +10,31 @@ inquirer.
             message: "What is the title of your project?",
             name: "Title"
         },
-        {
-            type: "input",
-            message: "Describe it. Motivation, Why, What'd it solve, What did you learn?",
-            name: "Description"
-        },
-        {
-            type: "input",
-            message: "Provide a step-by-step description to get your project running.",
-            name: "Installation"
-        },
-        {
-            type: "input",
-            message: "Provide instructions for use.",
-            name: "Instructions"
-        },
-        {
-            type: "input",
-            message: "Include a screenshot with alt text in this format ![alttext](photolink)",
-            name: "Screenshot"
-        },
-        {
-            type: "input",
-            message: "List collaborators with links to their Github profiles, third-party assets, and tutorials",
-            name: "Credits"
-        },
+        // {
+        //     type: "input",
+        //     message: "Describe it. Motivation, Why, What'd it solve, What did you learn?",
+        //     name: "Description"
+        // },
+        // {
+        //     type: "input",
+        //     message: "Provide a step-by-step description to get your project running.",
+        //     name: "Installation"
+        // },
+        // {
+        //     type: "input",
+        //     message: "Provide instructions for use.",
+        //     name: "Instructions"
+        // },
+        // {
+        //     type: "input",
+        //     message: "Include a screenshot with alt text in this format ![alttext](photolink)",
+        //     name: "Screenshot"
+        // },
+        // {
+        //     type: "input",
+        //     message: "List collaborators with links to their Github profiles, third-party assets, and tutorials",
+        //     name: "Credits"
+        // },
         {
             type: "list",
             message: "Which license would you like?",
@@ -57,29 +57,27 @@ inquirer.
         //     name: "Tests"
         // }
     ]).then((response) =>
-        response
-        ? console.log('success')
-        : console.log('you missed something')
-    )
-
-// const LicenseChoice = JSON.stringify(response.License.value)
-// module.exports = LicenseChoice
-
-// TODO: Create a function to write README file
-function writeToFile(response) {
-    fs.writeFile("README.md", writeToFile(response), function (err) {
+        fs.writeFile("answers.js", JSON.stringify(response,null,"\t"), function (err) {
         if (err) {
             console.error(err)
         } else {
             console.log('Answers logged!')
         }
     })
-}
+    )
 
-// TODO: Create a function to initialize app
-function init(response) {
 
-}
+// const LicenseChoice = JSON.stringify(response.License.value)
+// module.exports = LicenseChoice
 
-// Function call to initialize app
-init();
+// TODO: Create a function to write README file
+// function writeToFile() {
+    
+
+// // TODO: Create a function to initialize app
+// function init(response) {
+
+// }
+
+// // Function call to initialize app
+// init();
