@@ -44,12 +44,12 @@ inquirer
         },
         {
             type: "input",
-            message: "Want to be a contributor?",
+            message: "What would you like to say about contributing?",
             name: "Contributing"
         },
         {
             type: "input",
-            message: "Tests?",
+            message: "Enter test demonstrations here:",
             name: "Tests"
         },
         {
@@ -65,6 +65,7 @@ inquirer
     ]).then((response) =>
         fs.writeFile("README2.md",
 `${renderLicenseBadge(response.License)}
+
 # ${response.Title}
 
 ## Description
@@ -87,16 +88,17 @@ ${response.Installation}
 ${response.Usage}
       
 ## Screenshot
-[Screenshot of project](${response.Screenshot})
+![Screenshot of project](${response.Screenshot})
       
 ## Credits
 ${response.Credits}
 
-## License:
+## License
 This application is covered under the ${response.License} license.
       
 ## Contributing
-[Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](code_of_conduct.md)
+${response.Contributing}
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](code_of_conduct.md)
       
 ## Tests
 ${response.Tests}
