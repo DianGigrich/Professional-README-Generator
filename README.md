@@ -23,8 +23,8 @@ npm install fs
 ## Usage
 Enter "node index.js" into your command terminal, then it will prompt you with a series of questions. I suggest preparing links and screenshots ahead of time.
       
-##Screenshot:
-[![Screenshot of project](TODO:as;dlkfja;sldkfj)]
+## Screenshot:
+![Screenshot of project](screenshot.png)
       
 ## Credits
 The TAs at bootcamp: Henry Weigand and Lindsey Fitzgerald, 
@@ -39,7 +39,7 @@ I still don't understand how to contribute. Someday I will and this is a start!
 [Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)]
       
 ## Tests
-
+[Link to test](https://drive.google.com/file/d/192geTIdJvAGMsAkrfL3bAcioB3VzEqk8/view)
       
 ## Questions
 [Link to diangigrich's GitHub](https://github.com/diangigrich)

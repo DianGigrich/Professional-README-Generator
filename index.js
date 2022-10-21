@@ -63,7 +63,7 @@ inquirer
             name: "Email"
         }
     ]).then((response) =>
-        fs.writeFile("README2.md",
+        fs.writeFile("sample.md",
 `${renderLicenseBadge(response.License)}
 
 # ${response.Title}
@@ -117,6 +117,7 @@ ${response.Tests}
         )
     )
 
+// return the proper badge and link for license
 function renderLicenseBadge(license) {
     if (license === "") {
         return ""
